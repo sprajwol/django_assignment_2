@@ -18,7 +18,18 @@ class homeView(TemplateView):
 class blogsView(ListView):
     model = Post
     template_name = 'webapp/blogs.html'
-    ordering = ['-published_datetime']
+    ordering = ['-created_at']
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class detailedblogView(DetailView):
+    model = Post
+    template_name = 'webapp/blogview.html'
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
@@ -29,6 +40,18 @@ class blogsView(ListView):
 
 class profileView(TemplateView):
     template_name = 'webapp/profile.html'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class yourpostsView(ListView):
+    model = Post
+    template_name = 'webapp/yourposts.html'
+    ordering = ['-created_at']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

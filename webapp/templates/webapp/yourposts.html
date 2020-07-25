@@ -3,15 +3,15 @@
 {% load static %}
 
 {% block title %}
-Blogs | Django Assignment 2
+Your Posts | Django Assignment 2
 {% endblock title %}
 
 {% block cssarea %}
-<link rel="stylesheet" href="{% static 'webapp\styles\customs\css\blogs_style.css' %}">
+<link rel="stylesheet" href="{% static 'webapp\styles\customs\css\yourposts_style.css' %}">
 {% endblock cssarea %}
 
 {% block content %}
-<div class="blogsBlock">
+<div class="yourpostsBlock">
     <div class="container">
         <div class="blogs-heading text-center">
             <h1>Recent Posts</h1>
@@ -23,14 +23,18 @@ Blogs | Django Assignment 2
             <ul class="blog-item-group">
                 <hr />
                 {% for post in object_list %}
+
+                {{ user.first_name }}
+                {{ post.author.first_name }}
+                {% if post.author.first_name == user.first_name %}
                 <li class="blog-item">
-                    <a href="{% url 'blogview' post.pk %}">
+                    <a href="{% url 'yourpostsview' post.pk %}">
                         <div class="blog-item-figure-area">
                             <img src="/media/{{ post.main_img }}" alt="Blog Main Image">
                         </div>
                     </a>
                     <div class="blog-item-text">
-                        <a href="{% url 'blogview' post.pk %}">
+                        <a href="{% url 'yourpostsview' post.pk %}">
                             <div class="blog-post-title">
                                 <h3>{{ post.title }}</h3>
                             </div>
@@ -47,6 +51,7 @@ Blogs | Django Assignment 2
                     </div>
                 </li>
                 <hr />
+                {% endif %}
                 {% endfor %}
             </ul>
 

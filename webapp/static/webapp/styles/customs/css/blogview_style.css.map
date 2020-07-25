@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,cAAc,CAAC;EACX,UAAU,EAAE,IAAI;CACnB;;AACD,AAAA,cAAc,CAAC,GAAG,CAAC;EACf,UAAU,EAAE,IAAI;CACnB;;AAED,AAAA,UAAU,EAAE,cAAc,CAAC;EACvB,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "blogview_style.scss"
+    ],
+    "names": [],
+    "file": "blogview_style.css"
+}

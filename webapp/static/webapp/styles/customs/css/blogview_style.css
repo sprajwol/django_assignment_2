@@ -1,0 +1,12 @@
+.blogviewBlock {
+  margin-top: 50px;
+}
+
+.blog-main-img img {
+  max-height: 50vh;
+}
+
+.blog-body, .blog-main-img {
+  margin-top: 30px;
+}
+/*# sourceMappingURL=blogview_style.css.map */

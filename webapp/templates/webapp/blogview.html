@@ -1,0 +1,49 @@
+{% extends 'webapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Blogview | Django Assignment 2
+{% endblock title %}
+
+{% block cssarea %}
+<link rel="stylesheet" href="{% static 'webapp\styles\customs\css\blogview_style.css' %}">
+{% endblock cssarea %}
+
+{% block content %}
+<div class="blogviewBlock container">
+    <div class="blog-view-wrapper">
+        <div class="blog-view-heading">
+            <h1>{{ post.title }}</h1>
+        </div>
+        <div class="blog-info">
+            <div class="blog-author text-muted">
+                <small>Posted By: {{ post.author.first_name }} {{ post.author.last_name }}</small>
+            </div>
+            <div class="blog-published text-muted">
+                <small>Created at: {{ post.created_at }}</small>
+                <br />
+                <small>Updated at: {{ post.updated_at }}</small>
+            </div>
+        </div>
+        <hr />
+        {% if post.main_img %}
+        <div class="blog-main-img text-center">
+            <img src="/media/{{ post.main_img }}" alt="Blog Main Image" class="pb-30">
+        </div>
+        {% else %}
+        <div class="blog-main-img text-center">
+            <img src="/static/static_images/default_blog_mainimage/default-no-image.jpg" alt="Blog Main Image"
+                class="pb-30">
+        </div>
+        {% endif %}
+        <div class="blog-body">
+            {{ post.body|safe }}
+        </div>
+        <!-- {{ post.title_tag }} -->
+        <div class="default-link">
+            <a href="{% url 'blogs' %}">See all recent posts</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
