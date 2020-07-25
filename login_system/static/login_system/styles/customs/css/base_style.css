@@ -1,0 +1,14 @@
+.login_system_background img {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.login_system_background {
+  position: relative;
+}
+/*# sourceMappingURL=base_style.css.map */

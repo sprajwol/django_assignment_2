@@ -17,14 +17,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="{% static 'login_system\styles\customs\css\base_style.css' %}">
+    {% block cssarea %}
+    {% endblock cssarea %}
 
 </head>
 
 <body>
 
     <main class="login_system_main">
-        <div class="signin-system-background">
+        <div class="login_system_background">
             <img src="{% static 'login_system\static_images\area_background\login_system_background.jpg' %}"
                 alt="Page Background">
         </div>

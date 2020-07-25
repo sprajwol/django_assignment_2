@@ -1,0 +1,30 @@
+{% extends 'login_system/base.html' %}
+
+{% load static %}
+
+{% block login_system_title %}
+Logout | Django Assignment 2
+{% endblock login_system_title %}
+
+{% block cssarea %}
+<link rel="stylesheet" href="{% static 'login_system\styles\customs\css\logout_style.css' %}">
+{% endblock cssarea %}
+
+{% block panel %}
+<div class="logoutBlock">
+    <div class="logout-info-wrapper">
+        <div class="logout-info-header text-center">
+            <h1>Django Assignment 2</h1>
+        </div>
+        <div class="logout-body text-center">
+            <p>You have been logged out!!</p>
+        </div>
+        <div class="login-form-footer">
+            <div class="login-link"><a href="{% url 'login' %}">Sign Back In</a></div>
+            <div class="visit-site-link"><a href="{% url 'home' %}">Visit Website</a></div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock panel %}

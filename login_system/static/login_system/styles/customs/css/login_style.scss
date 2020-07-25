@@ -1,0 +1,114 @@
+@import 'global';
+
+.loginBlock {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-wrapper {
+    background: rgba($color: #000000, $alpha: 0.6);
+    width: 90%;
+    padding: 1em;
+}
+
+.login-form-header {
+    color: white;
+    img {
+        width: 10em;
+        margin-top: -5em;
+    }
+}
+
+.login-form-wrapper {
+    form {
+        color: $logo-white;
+
+        input {
+            background-color: $logo-white !important;
+        }
+
+        input:focus {
+            border-color: $logo-blue;
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba($color: $logo-blue, $alpha: 0.50)
+        }
+    }
+}
+
+.alert {
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.btn-login-submit {
+    background-color: $logo-orange2;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn-login-submit:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba($color: $logo_yellow, $alpha: 0.75)
+}
+
+.login-form-footer {
+    color: white;
+}
+
+@media only screen and (min-width:375px) {
+    .login-form-wrapper {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width:425px) {
+    .login-form-wrapper {
+        width: 70%;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    .login-form-wrapper {
+        width: 50%;
+    }
+
+    // .login-form-wrapper {
+    //     form {
+    //         input, label {
+    //             font-size: 1.2rem;
+    //         }
+
+            
+    //         legend {
+    //             h2 {
+    //                 font-size: 3rem;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // .btn-login-submit {
+    //     font-size: 1.2rem;
+    // }
+}
+
+@media only screen and (min-width:1024px) {
+    .login-form-wrapper {
+        width: 40%;
+    }
+}
+
+@media only screen and (min-width:1440px) {
+    .login-form-wrapper {
+        width: 30%;
+    }
+}

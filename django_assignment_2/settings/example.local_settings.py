@@ -30,3 +30,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Clickjacking protecting
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# redirecting to which page after successful signin from admin signin page
+LOGIN_REDIRECT_URL = 'home'
+
+# url name defining the path of the login/signin url
+LOGIN_URL = 'login'

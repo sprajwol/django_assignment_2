@@ -19,7 +19,8 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'webapp\styles\customs\css\base_style.css' %}">
-
+    {% block cssarea %}
+    {% endblock cssarea %}
 </head>
 
 <body>
@@ -38,19 +39,7 @@
                         <a class="nav-link" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                        <a class="nav-link" href="#">Blogs</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav my-2 my-lg-0">
@@ -58,10 +47,11 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hello, {{ user.first_name }}
+                            Hello, {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                            <a class="dropdown-item" href="#">Your Posts</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
                         </div>

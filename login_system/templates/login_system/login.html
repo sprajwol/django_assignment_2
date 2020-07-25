@@ -1,0 +1,35 @@
+{% extends 'login_system/base.html' %}
+
+{% load static %}
+
+{% block login_system_title %}
+Login | Django Assignment 2
+{% endblock login_system_title %}
+
+{% block cssarea %}
+<link rel="stylesheet" href="{% static 'login_system\styles\customs\css\login_style.css' %}">
+{% endblock cssarea %}
+
+{% block panel %}
+<div class="loginBlock">
+    <div class="login-form-wrapper">
+        <div class="login-form-header text-center">
+            <h1>Django Asignment 2</h1>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+
+            <legend class="border-bottom mb-4">
+                <h3 class="text-center">Login</h3>
+            </legend>
+            {{ form }}
+            <div class="form-group">
+                <button class="btn btn-login-submit" type="submit">Login</button>
+            </div>
+        </form>
+        <div class="login-form-footer">
+            Don't have an account? <a href="#">Register now.</a>
+        </div>
+    </div>
+</div>
+{% endblock panel %}

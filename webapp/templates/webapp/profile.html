@@ -1,0 +1,57 @@
+{% extends 'webapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+{% endblock title %}
+
+{% block cssarea %}
+<link rel="stylesheet" href="{% static 'webapp\styles\customs\css\profile_style.css' %}">
+{% endblock cssarea %}
+
+{% block content %}
+<div class="profileBlock">
+    <div class="container">
+        <div class="proff">
+            <div class="profile-heading text-center">
+                <h1>User Profile</h1>
+            </div>
+            <div class="profile-data-area">
+                <div class="user-profile-img">
+                    {% if user.profile.profile_picture %}
+                    <img src="/media/{{ user.profile.profile_picture }}" alt="User Profile Image">
+                    {% else %}
+                    <img src="{% static 'webapp\static_images\default_profile_image\default_user.jpg' %}"
+                        alt="User Profile Image">
+                    {% endif %}
+                </div>
+                <div class="user-profile-data">
+                    <table>
+                        <tr>
+                            <th>Name:</th>
+                            <td>{{ user.first_name }} {{ user.last_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Current Address:</th>
+                            <td>{{ user.profile.current_address }}</td>
+                        </tr>
+                        <tr>
+                            <th>Primary Phone Number:</th>
+                            <td>{{ user.profile.primary_phone_number }}</td>
+                        </tr>
+                        <tr>
+                            <th>Secondary Phone Number:</th>
+                            <td>{{ user.profile.secondary_phone_number }}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
