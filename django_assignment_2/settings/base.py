@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     'webapp.apps.WebappConfig',
     'login_system.apps.LoginSystemConfig',
+    'blogs.apps.BlogsConfig',
 ]
 
 MIDDLEWARE = [

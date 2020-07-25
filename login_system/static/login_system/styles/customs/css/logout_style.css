@@ -1,1 +1,229 @@
-/* No CSS *//*# sourceMappingURL=logout_style.css.map */
+.part-headings {
+  font-size: 2.2em;
+  color: #333333;
+  font-weight: bolder;
+}
+
+.part-sub-headings {
+  font-size: 0.8em;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.pt-30 {
+  padding-top: 30px;
+}
+
+.pt-50 {
+  padding-top: 50px;
+}
+
+.pb-50 {
+  padding-bottom: 50px;
+}
+
+.default-button {
+  text-align: center;
+}
+
+.default-button a {
+  text-align: center;
+  background-color: #fba723;
+  padding: 10px 15px;
+  color: #EEEEEE;
+  text-decoration: none;
+}
+
+.intro-text-txt {
+  margin: 0 20px;
+  text-align: justify;
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  40% {
+    -webkit-box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  80% {
+    -webkit-box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+            box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7);
+  }
+  40% {
+    -webkit-box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  80% {
+    -webkit-box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+            box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+
+.logoutBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logout-info-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  width: 90%;
+  padding: 1em;
+}
+
+.logout-info-header {
+  color: white;
+}
+
+.logout-info-header img {
+  width: 10em;
+  margin-top: -5em;
+}
+
+.logout-body p {
+  color: white;
+  font-size: 2em;
+}
+
+.login-form-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-form-footer div {
+  padding: 6px 32px;
+  margin: 5px 0;
+  width: 10em;
+  text-align: center;
+}
+
+.login-form-footer div a {
+  text-decoration: none;
+  color: white;
+}
+
+.login-form-footer div a:focus {
+  outline: none;
+}
+
+.login-link {
+  background-color: #f67729;
+  border: 2px solid #f67729;
+}
+
+.login-link:hover {
+  background-color: rgba(246, 119, 41, 0.2);
+  border: 2px solid #f67729;
+}
+
+.visit-site-link {
+  background-color: #7259eb;
+  border: 2px solid #7259eb;
+}
+
+.visit-site-link:hover {
+  background-color: rgba(114, 89, 235, 0.2);
+  border: 2px solid #7259eb;
+}
+
+@media only screen and (min-width: 375px) {
+  .logout-info-wrapper {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  .logout-info-wrapper {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .logout-info-wrapper {
+    width: 50%;
+  }
+  .login-form-footer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .login-form-footer div {
+    margin: 0 5px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .logout-info-wrapper {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .logout-info-wrapper {
+    width: 30%;
+  }
+}
+/*# sourceMappingURL=logout_style.css.map */
