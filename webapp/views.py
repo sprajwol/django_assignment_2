@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db import transaction
-from django.views.generic import TemplateView, ListView, DetailView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView
 
 from django.contrib.auth.models import User
 from blogs.models import Post
@@ -101,6 +101,19 @@ class yourpostsView(ListView):
     model = Post
     template_name = 'webapp/yourposts.html'
     ordering = ['-created_at']
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class yournewpostView(CreateView):
+    model = Post
+    template_name = 'webapp/yournewpost.html'
+    fields = ['title', 'title_tag', 'category',
+              'main_img', 'body', 'snippet']
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

@@ -15,4 +15,6 @@ urlpatterns = [
         webapp_views.yourpostsView.as_view()), name='yourposts'),
     path('yourpostsview/<int:pk>', login_required(
         webapp_views.yourpostsView.as_view()), name='yourpostsview'),
+    path('yournewpost', login_required(
+        webapp_views.yournewpostView.as_view()), name='yournewpost'),
 ]

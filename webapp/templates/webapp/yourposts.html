@@ -19,13 +19,13 @@ Your Posts | Django Assignment 2
         <div class="blogs-subheading text-center">
             <h5>All Recent Blog Posts</h5>
         </div>
+        <div class="new_post">
+            <a href="">Add new post</a>
+        </div>
         <div class="blog-content-area mt-30">
             <ul class="blog-item-group">
                 <hr />
                 {% for post in object_list %}
-
-                {{ user.first_name }}
-                {{ post.author.first_name }}
                 {% if post.author.first_name == user.first_name %}
                 <li class="blog-item">
                     <a href="{% url 'yourpostsview' post.pk %}">
