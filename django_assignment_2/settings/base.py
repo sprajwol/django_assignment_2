@@ -68,6 +68,7 @@ WSGI_APPLICATION = 'django_assignment_2.wsgi.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+AUTHENTICATION_BACKENDS = ('django_assignment_2.backends.EmailAuthBackend',)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
