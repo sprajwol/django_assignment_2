@@ -9,6 +9,8 @@ urlpatterns = [
     path('blogview/<int:pk>', webapp_views.detailedblogView.as_view(), name='blogview'),
     path('profile', login_required(
         webapp_views.profileView.as_view()), name='profile'),
+    path('profileupdate', login_required(
+        webapp_views.profileView.update_profile), name='profileupdate'),
     path('yourposts', login_required(
         webapp_views.yourpostsView.as_view()), name='yourposts'),
     path('yourpostsview/<int:pk>', login_required(

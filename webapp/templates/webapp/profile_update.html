@@ -26,29 +26,12 @@
                     {% endif %}
                 </div>
                 <div class="user-profile-data">
-                    <table>
-                        <tr>
-                            <th>Name:</th>
-                            <td>{{ user.first_name }} {{ user.last_name }}</td>
-                        </tr>
-                        <tr>
-                            <th>Email:</th>
-                            <td>{{ user.email }}</td>
-                        </tr>
-                        <tr>
-                            <th>Current Address:</th>
-                            <td>{{ user.profile.current_address }}</td>
-                        </tr>
-                        <tr>
-                            <th>Primary Phone Number:</th>
-                            <td>{{ user.profile.primary_phone_number }}</td>
-                        </tr>
-                        <tr>
-                            <th>Secondary Phone Number:</th>
-                            <td>{{ user.profile.secondary_phone_number }}</td>
-                        </tr>
-                    </table>
-                    <a href="{% url 'profileupdate' %}">Update Profile</a>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ user_form.as_p }}
+                        {{ profile_form.as_p }}
+                        <button type="submit">Save changes</button>
                     </form>
                 </div>
             </div>
