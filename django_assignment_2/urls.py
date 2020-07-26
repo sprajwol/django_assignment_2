@@ -29,7 +29,9 @@ urlpatterns = [
         template_name='login_system/login.html'), name='login'),
     path('logout', auth_views.LogoutView.as_view(
         template_name='login_system/logout.html'), name='logout'),
-    path('register', login_system_views.registerView.as_view(), name='register'),
+    path('register', login_system_views.registerView.register, name='register'),
+    path('activate/<uidb64>/<token>/',
+         login_system_views.registerView.activate, name='activate'),
 ]
 
 if settings.DEBUG:
