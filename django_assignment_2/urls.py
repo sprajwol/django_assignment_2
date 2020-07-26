@@ -20,14 +20,16 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.contrib.auth.decorators import login_required
 
+from login_system import views as login_system_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('webapp.urls')),
-
     path('login', auth_views.LoginView.as_view(
         template_name='login_system/login.html'), name='login'),
     path('logout', auth_views.LogoutView.as_view(
         template_name='login_system/logout.html'), name='logout'),
+    path('register', login_system_views.registerView.as_view(), name='register'),
 ]
 
 if settings.DEBUG:
