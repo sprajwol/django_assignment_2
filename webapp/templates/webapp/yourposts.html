@@ -39,6 +39,11 @@ Your Posts | Django Assignment 2
                                 <h3>{{ post.title }}</h3>
                             </div>
                         </a>
+                        <div class="change-btns">
+                            <a href="{% url 'yourpostsedit' post.id %}" class="edit-post">Edit Post</a> --- <a
+                                href="{% url 'yourpostsdelete' post.id %}" class="delete-post">Delete
+                                Post</a>
+                        </div>
                         <div class="blog-post-poster text-muted">
                             <small>Posted By: {{ post.author.first_name }} {{ post.author.last_name }}</small>
                         </div>

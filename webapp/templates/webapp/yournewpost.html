@@ -11,7 +11,10 @@ Home | Django Assignment 2
 {% endblock cssarea %}
 
 {% block content %}
-<div class="yournewpostBlock">
+<div class="yournewpostBlock container">
+    <div class="yournewpost-heading text-center">
+        <h1>Create New Post</h1>
+    </div>
     <form method="post">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save">

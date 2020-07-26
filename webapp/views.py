@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db import transaction
-from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView
+from django.views.generic import TemplateView, ListView, DetailView, UpdateView, CreateView, DeleteView
 
 from django.contrib.auth.models import User
 from blogs.models import Post
@@ -112,8 +112,46 @@ class yourpostsView(ListView):
 class yournewpostView(CreateView):
     model = Post
     template_name = 'webapp/yournewpost.html'
-    fields = ['title', 'title_tag', 'category',
+    fields = ['title', 'title_tag', 'author', 'category',
               'main_img', 'body', 'snippet']
+    success_url = reverse_lazy('yourposts')
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class yourpostseditView(UpdateView):
+    model = Post
+    template_name = 'webapp/yournewpost.html'
+    fields = ['title', 'title_tag', 'author', 'category',
+              'main_img', 'body', 'snippet']
+    success_url = reverse_lazy('yourposts')
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class yourpostsdeleteView(DeleteView):
+    model = Post
+    template_name = 'webapp/yourpostsdelete.html'
+    success_url = reverse_lazy('yourposts')
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+
+        return context
+
+
+class yourpostdetailviewView(DetailView):
+    model = Post
+    template_name = 'webapp/yourpostsview.html'
 
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context

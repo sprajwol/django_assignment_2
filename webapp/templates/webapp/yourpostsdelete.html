@@ -1,0 +1,20 @@
+{% extends 'webapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+Delete Post | Django Assignment 2
+{% endblock title %}
+
+{% block cssarea %}
+<link rel="stylesheet" href="{% static 'webapp\styles\customs\css\home_style.css' %}">
+{% endblock cssarea %}
+
+{% block content %}
+<div class="yourpostsdeleteBlock container">
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock content %}
